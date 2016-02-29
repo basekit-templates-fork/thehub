@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+{% block class %}bk-pt-home{% endblock %}
+{% block content %}
+
+    <div class="home-feature">
+        <!-- Theme Feature Widget -->
+
+        {{widget('content', 'sidebarcontent', {
+  content: 'Lorem ipsum dolor sit amet consectetur esumu adipisico elit, sed do eiusmod tempor est luctus ullamco incididun.'
+})|raw}}
+
+        {{widget('feature', 'featurehome', {
+            "header": "profile",
+            "defaultBgImg": asset('images/feature.jpg'),
+            'positionTopPercentage': '0',
+            'showBtn': true,
+            buttonText: "Lorem Ipsum"
+        })|raw}}
+    </div>
+
+
+
+	<!-- Zone Content -->
+	<div class="zone-content">
+		<!-- Main Widet Zone -->
+   		{{zone('main')|raw}}
+	</div>
+	<!-- End Zone Content -->
+
+
+<!-- End Home Page Content -->
+{% endblock %}

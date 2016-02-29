@@ -1,0 +1,71 @@
+<!-- Header -->
+
+<header class="template-header">
+
+    <div class="top-bar">
+
+    	<div class="template-header-rowone header-flex-container container">
+
+            <div class="header-flex-item header-clicktocall">
+                {{widget('clicktocall', 'headerclicktocall', {
+                'phoneText': '012 3456 789',
+                'italic': false,
+                'bold': true,
+                'fontSize': 16,
+                'align': 'widget-align-right'
+                })|raw}}
+                <div class="tablet-top-bar"></div>
+            </div><!-- End header-flex-item header-clicktocall -->
+
+            <div class="header-flex-item template-navigation">
+                {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
+                <div class="tablet-top-bar"></div>
+            </div>
+
+    	</div><!-- End template-header-rowone -->
+
+    </div><!-- End top-bar -->
+
+	<div class="template-header-rowtwo header-flex-container container">
+
+			<div class="header-flex-item template-logo">
+				{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"1"})|raw}}
+			</div>
+
+			<div class="header-flex-item template-companyname">
+				{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+			</div>
+
+			{% if plugins.blog.live and plugins.ecommerce.store.live == false %}
+
+			<div class="header-flex-item template-search">
+                <div class="template-blog-search">
+                    {{widget('blogsearch', 'blogsearch', {})|raw}}
+                </div>
+            </div> <!-- End header-flex-item template search -->
+
+            {% endif %}
+
+            {% if plugins.ecommerce.store.live and plugins.blog.live == false %}
+
+			<div class="header-flex-item template-search">
+                <div class="template-product-search">
+                    <form class="form  ecomproductslist__form js-productlist-display-form" method="GET" action="/store">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <input class="input js-display-control" id="page-zones__main-widgets__ecomproductslistWidget__ecomproductslist__search" name="productlist-search" placeholder="Search Products..." type="search" value="">
+                            </div>
+                            <div class="form-group">
+                                <button class="button  button--submit  ecomproductslist__button" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+             </div> <!-- End header-flex-item template search -->
+
+            {% endif %}
+
+	</div> <!-- End template-header-rowtwo -->
+
+</header>
+<!-- End Header -->

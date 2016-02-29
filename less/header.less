@@ -1,0 +1,336 @@
+// --------
+// Header
+// --------
+
+
+// ---------------
+// Flexbox
+// ---------------
+
+.header-flex-container {
+    .flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+// Global style for flex items
+.header-flex-item {
+        -webkit-flex: 1 1 50%;
+        -ms-flex: 1 1 50%;
+        flex: 1 1 50%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        margin-bottom: 0;
+    @media @tablet {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        margin-bottom: 0;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+}
+
+
+
+
+// --------------------------------------
+// Margins
+// --------------------------------------
+
+@media only screen and (min-width: 770px) {
+    .template-header-rowtwo .form.form {
+        margin-top: 20px;
+    }
+    .logo {
+        margin-top: 10px;
+    }
+    .companyname {
+        margin-top: 17px;
+    }
+}
+
+.template-header-rowtwo {
+    @media @tablet {
+        margin-top: 30px;
+    }
+}
+
+.bk-pt-home .template-header-rowtwo {
+    @media @mobile {
+        margin-bottom: 10px;
+    }
+}
+
+.home-feature,
+.zone-content,
+.bk-pt-defaultpage .page-title,
+.bk-pt-store .page-title,
+.bk-pt-blogpostlist .blogpostlist {
+    margin-top: 40px;
+    @media @tablet {
+        margin-top: 10px;
+    }
+    @media only screen and (max-width : 600px) {
+        padding: 20px 0;
+        margin: 0;
+    }
+}
+
+
+
+
+// ---------------------------------------------------------
+// Fix for nav and social icons overlay in tablet and mobile
+// ---------------------------------------------------------
+
+// Fix overlay in editor on tablet and mobile
+
+.extendednavigation + .widget-overlay {
+    @media @tablet {
+        width: 138px;
+        height: 44px;
+    }
+}
+
+.template-navigation .bk-tpl-hidden-mask:before {
+    @media @tablet {
+        width: 138px;
+    }
+}
+
+
+.header-clicktocall .widget {
+    height: 44px;
+    .widget-overlay {
+        @media @tablet {
+            width: 138px;
+            height: 44px;
+            left: inherit !important;
+        }
+    }
+}
+
+.header-clicktocall .bk-tpl-hidden-mask:before {
+    @media @tablet {
+        width: 138px;
+        right: 0;
+        left: inherit;
+    }
+}
+
+
+
+
+// ----------------------------------------------
+// Header First Row: Nav and Click to Call Widget
+// ----------------------------------------------
+
+.template-header-rowone {
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    .header-flex-item {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+}
+
+// Navigation widget
+.template-navigation {
+    @media @tablet {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        width: 100%;
+        .navigation-toggle {
+            height: 44px;
+        }
+    }
+}
+
+// Margins
+
+@media only screen and (min-width: 770px) {
+    .extendednavigation,
+    .clicktocall {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+// Click to Call Widget
+.header-flex-item.header-clicktocall .clicktocall {
+    min-height: 44px;
+    @media @tablet {
+        position: absolute;
+        right: 0;
+        margin: 0 0 0 auto;
+        z-index: 9999;
+        .phone-number-link:hover {
+            background-color: transparent;
+            &:before {
+                color: @color__navigation--text--hover;
+            }
+        }
+    }
+}
+.header-flex-item.header-clicktocall + .widget {
+    position: relative;
+}
+.template-header .clicktocall .phone-number-link {
+    white-space: nowrap;
+    .label {
+        color: @color__navigation--text;
+        background-color: transparent;
+        @media screen and (max-width: 854px) {
+            color: @color__navigation--text;
+        }
+        @media @mobile {
+            display: none;
+        }
+    }
+    &:before {
+        color: @color__navigation--text;
+    }
+    @media screen and (max-width: 854px) {
+        padding: 0;
+        line-height: 44px;
+        background-color: transparent;
+    }
+    @media @mobile {
+        text-align: right;
+        &:before {
+            color: @color__navigation--text;
+            font-size: 20px;
+        }
+    }
+}
+
+
+
+
+// ------------------------------------------
+// Header Second Row: Company Name and Search
+// -------------------------------------------
+
+
+.template-header-rowtwo .header-flex-item {
+    @media only screen and (min-width: 770px) {
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    }
+    @media @tablet {
+        -webkit-flex: 1 1 100%;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+// Logo and Company Name
+
+.template-logo,
+.template-companyname {
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-bottom: 0;
+    line-height: 44px;
+}
+
+.logo-link,
+.logo-image {
+    vertical-align: middle;
+}
+
+.logo {
+    margin-right: 10px;
+    @media @tablet {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+.logo-image {
+    @media @mobile {
+        max-height: 150px;
+    }
+}
+
+.company-link {
+    color: @color__companyname--text;
+    font-family: @font__companyname--font-family;
+    font-size: @font__companyname--font-size;
+    font-weight: @font__companyname--font-weight;
+    line-height: @font__companyname--line-height;
+    letter-spacing: @font__companyname--letter-spacing;
+    @media only screen and (max-width : 600px) {
+        font-size: bkscale(@font__companyname--font-size,0.8);
+        line-height: bkscale(@font__companyname--line-height,0.8);
+    }
+}
+
+.company-link:hover {
+    color: @color-swatch3;
+    text-decoration: none;
+    .transition( all, 0.5s, ease );
+}
+
+// Template Search
+
+.template-search {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+
+
+
+// -------------------
+// Tablet top Bar
+// -------------------
+
+.widget + .tablet-top-bar {
+    @media @tablet {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -5%;
+        right: -5%;
+        width: 110%;
+        height: 44px;
+        background-color: @color__navigation--background;
+    }
+}
+
+.tablet-top-bar,
+.bk-tpl-hidden + .tablet-top-bar {
+    @media @tablet {
+        display: none;
+    }
+}
